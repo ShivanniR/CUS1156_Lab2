@@ -11,11 +11,18 @@ public class UniqueWords
    {
 	  int count = 0;
 	  
-      for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
-		 {
-			
+      for (int i = 0; i < list.size(); i++){
+    	  boolean uniqueWords = true;
+    	  for (int j = 0; j < list.size(); j++){
+    		  if(i!=j && list.get(i).equals(list.get(j))) {
+    			  uniqueWords =false;
+    			  break;
+    	  }
+    	 	
 		 }
+    	  if(uniqueWords) {
+    		  count++;
+    	  }
       }
 	  return count;
    }
@@ -33,5 +40,9 @@ public class UniqueWords
    
 	  int unique = countUnique(words);
       System.out.println(words + " has " + unique + " unique words");
+      
+      int count = words.size();
+      
+      System.out.println(count);
    }
 }
